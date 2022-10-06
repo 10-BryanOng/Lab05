@@ -12,6 +12,8 @@ public class CoinScript : MonoBehaviour
     public int TimeRemaining;
     private float Timer;
 
+    public GameObject Coinfx;
+
     public Text ScoreText;
     public Text TimeText;
     // Start is called before the first frame update
@@ -41,6 +43,7 @@ public class CoinScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Coin")
         {
+            Instantiate(Coinfx, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Score += 10;
             ScoreText.GetComponent<Text>().text = "Score:" + Score;
