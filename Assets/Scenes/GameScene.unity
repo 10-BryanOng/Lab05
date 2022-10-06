@@ -1401,6 +1401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93176fee5912774ea4d179317402850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TotalCoins: 0
+  TimeLeft: 20
+  TimeRemaining: 0
   ScoreText: {fileID: 1571765024}
   TimeText: {fileID: 326766504}
 --- !u!1 &513957027

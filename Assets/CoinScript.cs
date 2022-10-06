@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class CoinScript : MonoBehaviour
 {
     private int Score;
-    private float Timer = 20f;
+    public int TotalCoins;
+    public float TimeLeft;
+    public int TimeRemaining;
+    private float Timer;
 
     public Text ScoreText;
     public Text TimeText;
@@ -20,16 +23,15 @@ public class CoinScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer -= Time.deltaTime;
-
-        TimeText.GetComponent<Text>().text = "Time: " + Timer * Mathf.Round(Timer * 10) / 10;
+        TimeLeft -= Time.deltaTime;
+        TimeText.GetComponent<Text>().text = "Time: " + TimeLeft;
 
         if(Score >= 60)
         {
             SceneManager.LoadScene("GameWin");
         }
 
-        if(Timer <= 0f)
+        if(TimeLeft <= 0f)
         {
             SceneManager.LoadScene("GameLose");
         }
